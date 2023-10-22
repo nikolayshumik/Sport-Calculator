@@ -8,7 +8,7 @@
     <script defer src="{% static 'js/main.js' %}"></script>
 </head>
 <body>
-<button onclick="goBack()">Назад</button>
+<button class="main-orientations" onclick="goBack()">&lt;</button>
 <h2>Fill your personal info</h2>
 <h2>Hello, {{ request.user.username }}</h2>
     <form method="post">

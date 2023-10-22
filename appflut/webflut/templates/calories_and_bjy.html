@@ -1,123 +1,72 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="{% static 'css/main.css' %}" rel="stylesheet">
-    <script defer src="{% static 'js/main.js' %}"></script>
-    <style>
-        .nutrition-div {
-            display: inline-block;
-            width: 30%;
-            text-align: center;
-            border: 1px solid #000;
-            padding: 10px;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </style>
-    <style>
-
-.container .content {
-    display: none;
-
-}
-
-.container.active .content {
-    display: block;
-}
-
-.clickable {
-    cursor: pointer;
-}
-
-
-.buttonMod {
-    display: inline-block;
-    font-size: 16px;
-    border: 2px solid #000;
-    padding: 10px 20px;
-    text-decoration: none;
-    background-color: #fff;
-    color: #000;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.buttonMod:hover {
-    background-color: #f8f8f8;
-}
-.breakfast.clickable {
-  display: inline-block;
-  width: 200px;
-  font-size: 14px; /* Обратите внимание, эта строка изменяет размер текста */
-  border: 1px solid #000; /* Этот код добавляет тонкую черную обводку */
-  padding: 10px; /* Добавляет немного отступа вокруг текста */
-  text-align: center; /* Выравнивает текст по центру */
-}
-.breakfast.clickable:hover {
-  background-color: #f0f0f0; /* Меняет цвет фона при наведении мыши */
-}
-
-
-    </style>
+    <title>Калории</title>
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+    <!--Медиа запросы, адаптив-->
+    <link media="screen and (max-width: 400px)" href="{% static 'css/Calories Page/calories400.css' %}" rel="stylesheet"/>
+    <link media="screen and (min-width: 401px)" href="{% static 'css/Calories Page/calories600.css' %}" rel="stylesheet"/>
+    <!--Подключение шрифтов-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lexend&display=swap" rel="stylesheet">
+    <!--Скрипт
+        <script defer src="{% static 'js/main.js' %}"></script>
+    -->
+    <script>
+        document.querySelectorAll('.clickable').forEach(item => {
+          item.addEventListener('click', event => {
+            event.target.parentElement.classList.toggle('active');
+          });
+        })
+        </script>
 </head>
 <body>
 
-<form method="get">
+<a href="{% url 'profile' %}" class="profile">p</a>
+
+<form method="get" class="data">
     {{ form }}
-    <button type="submit" name="move" value="prev">Назад</button>
-    <button type="submit" name="move" value="next">Вперед</button>
+    <div class="row-buttons">
+    <button type="submit" name="move" value="prev">&lt;</button>
+    <button type="submit" name="move" value="next">&gt;</button>
+    </div>
 </form>
 
-<a href="{% url 'profile' %}" class="buttonMod">профиль</a><br>
-<h>Калории и БЖУ</h>
-<div>
-    <div class="nutrition-div">
-        <h2>Потреблено</h2>
+
+<div class="block">Калории
+<div class="nutrition-div" style="margin-top: 20px; font-size: 20px;">Норма
+    <p>...</p>
+</div>
+
+<div class="container" style="grid-template-columns: auto auto">
+    <div class="nutrition-div">Потреблено
         <p>{{ total_calories }}</p>
     </div>
-    <div class="nutrition-div">
-        <h2>Норма</h2>
-        <p>...</p>
-    </div>
-    <div class="nutrition-div">
-        <h2>Сожжено</h2>
+    <div class="nutrition-div">Сожжено
         <p>{{ total_calories_activities }}</p>
     </div>
-    <div class="nutrition-div">
-        <h2>Белки</h2>
+</div>
+</div>
+
+<div class="block">
+БЖУ
+<div class="container">
+    <div class="nutrition-div">Белки
         <p>{{ total_proteins }}</p>
     </div>
-    <div class="nutrition-div">
-        <h2>Жиры</h2>
+    <div class="nutrition-div">Жиры
         <p>{{ total_fats }}</p>
     </div>
-    <div class="nutrition-div">
-        <h2>Углеводы</h2>
+    <div class="nutrition-div">Углеводы
         <p>{{ total_carbohydrates }}</p>
     </div>
 </div>
+</div>
+<!--Конец двух верхних блоков-->
 
-<div class="container">
+<div class="eatings">
     <div class="breakfast clickable">
         <a href="{% url 'breakfast' %}" class="buttonMod">Завтрак</a><br>
         <div>
@@ -132,7 +81,7 @@
         <div class="content">
             <h1>Отчёт завтрака</h1>
 
-            <div class="product-container">
+            <div class="product-eatings">
                 {% for product in bproducts %}
                 <div class="product-item">
                     <h4>{{ product.name }}</h4>
@@ -156,7 +105,7 @@
 </div>
 
 
-<div class="container">
+<div class="eatings">
     <div class="breakfast clickable">
         <a href="{% url 'lunch' %}" class="buttonMod">Обед</a><br>
         <div>
@@ -172,7 +121,7 @@
 
             <h1>Отчёт обеда</h1>
 
-            <div class="product-container">
+            <div class="product-eatings">
                 {% for product in lproducts %}
                 <div class="product-item">
                     <h4>{{ product.name }}</h4>
@@ -196,7 +145,7 @@
 </div>
 
 
-<div class="container">
+<div class="eatings">
     <div class="breakfast clickable">
         <a href="{% url 'dinner' %}" class="buttonMod">Ужин</a><br>
         <div>
@@ -211,7 +160,7 @@
         <div class="content">
             <h1>Отчёт Ужин</h1>
 
-            <div class="product-container">
+            <div class="product-eatings">
                 {% for product in dproducts %}
                 <div class="product-item">
                     <h4>{{ product.name }}</h4>
@@ -233,7 +182,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="eatings">
     <div class="breakfast clickable">
         <a href="{% url 'snack' %}" class="buttonMod">Перекус</a><br>
         <div>
@@ -249,7 +198,7 @@
 
             <h1>Отчёт Перекуса</h1>
 
-            <div class="product-container">
+            <div class="product-eatings">
                 {% for product in sproducts %}
                 <div class="product-item">
                     <h4>{{ product.name }}</h4>
@@ -272,7 +221,7 @@
 </div>
 
 
-<div class="container">
+<div class="eatings">
     <div class="breakfast clickable">
         <a href="{% url 'activities' %}" class="buttonMod">Активности</a><br>
         <div>
@@ -284,7 +233,7 @@
         <div class="content">
             <h1>Отчёт Активности</h1>
 
-            <div class="product-container">
+            <div class="product-eatings">
                 {% for el in activity %}
                 <div class="product-item">
                     <h4>{{ el.product.name }}</h4>
@@ -308,14 +257,8 @@
 
 <a href="{% url 'calories_and_bjy' %}" class="buttonMod">Дневник</a><br>
 <a href="{% url 'report' %}" class="buttonMod">Отчеты</a><br>
-<script>
-document.querySelectorAll('.clickable').forEach(item => {
-  item.addEventListener('click', event => {
-    event.target.parentElement.classList.toggle('active');
-  });
-})
 
-</script>
+
 
 </body>
 </html>

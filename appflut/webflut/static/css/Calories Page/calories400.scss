@@ -1,0 +1,75 @@
+$blue_color: rgb(4, 177, 211);
+$gray_color:rgb(47,47,47);
+$main_backgrounde: #1d1d1d;
+$text_color: white;
+$back_dark: #141414;
+$font_main_text: 25px;
+$font_ps_text: 15px;
+html {
+    height: 100%;
+    font-family: "Inter";
+    background-color: #1d1d1d;
+  }
+body{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.data{
+    display: flex;
+    flex-direction: column;
+
+    .row-buttons{
+        flex-direction: row;
+        margin-top: 5px;
+        >*{
+        width: 60px;
+        font-size: 22px;
+        color: white;
+        border: 0px;
+        background-color: $blue_color;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-decoration: none;
+        border-radius: 10px;
+        }
+    }
+}
+.profile{
+    margin-left: auto;
+    font-size: 25px;
+    color: white;
+    border: 0px;
+    background-color: $blue_color;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.block{
+    font-size: $font_main_text;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: $blue_color;
+    color: $text_color;
+    padding-top: 5px;
+    //box-shadow: 0px 0px 10px -1px #a8fff1;
+    .nutrition-div{
+        background-color: $blue_color;
+        font-size: $font_ps_text;
+        border-radius: 5px;
+        margin: 5px;
+        //box-shadow: 0px 0px 10px -1px #a8fff1;
+    }
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 5px;
+  >*{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+  }
+  }
+
+
+
