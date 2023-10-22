@@ -70,6 +70,21 @@ body{
     text-align: center;
   }
   }
+.eatings{
+    border-radius: 10px;
+    background-color: aquamarine;
+    width: 90%;
+    font-size: $font_ps_text;
+    color: white;
+    margin: 10px auto 0 auto;
+    border: 0px;
+    padding: 5px;
+    text-decoration: none;   
+    .buttonMod{
+        color: white;
+        text-decoration: none;   
+    }
+}
 
 
 

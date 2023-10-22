@@ -64,4 +64,20 @@ body {
 .container > * {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
+}
+
+.eatings {
+  border-radius: 10px;
+  background-color: aquamarine;
+  width: 90%;
+  font-size: 15px;
+  color: white;
+  margin: 10px auto 0 auto;
+  border: 0px;
+  padding: 5px;
+  text-decoration: none;
+}
+.eatings .buttonMod {
+  color: white;
+  text-decoration: none;
 }/*# sourceMappingURL=calories400.css.map */
