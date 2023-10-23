@@ -1,14 +1,14 @@
-$blue_color: rgb(4, 177, 211);
+$blue_color: white;
 $gray_color:rgb(47,47,47);
-$main_backgrounde: #1d1d1d;
-$text_color: white;
+$main_backgrounde: #f7f8fa;
+$text_color: #0c1c2c;
 $back_dark: #141414;
 $font_main_text: 25px;
 $font_ps_text: 15px;
 html {
     height: 100%;
     font-family: "Inter";
-    background-color: #1d1d1d;
+    background-color: $main_backgrounde;
   }
 body{
     text-align: center;
@@ -25,7 +25,7 @@ body{
         >*{
         width: 60px;
         font-size: 22px;
-        color: white;
+        color: $text_color;
         border: 0px;
         background-color: $blue_color;
         padding-top: 5px;
@@ -38,7 +38,7 @@ body{
 .profile{
     margin-left: auto;
     font-size: 25px;
-    color: white;
+    color: $text_color;
     border: 0px;
     background-color: $blue_color;
     padding: 5px 10px;
@@ -72,10 +72,10 @@ body{
   }
 .eatings{
     border-radius: 10px;
-    background-color: aquamarine;
+    background-color: white;
     width: 90%;
     font-size: $font_ps_text;
-    color: white;
+    color: #0c1c2c;
     margin: 10px auto 0 auto;
     border: 0px;
     padding: 5px;

@@ -26,6 +26,14 @@ class PersonalInformForm(forms.ModelForm):
     class Meta:
         model = Personal_Inform
         fields = ['sex', 'date_of_birth', 'weight', 'height', 'goals', 'active',]
+        widgets = {
+            'sex': forms.RadioSelect(choices=Personal_Inform.SEX_CHOICES, attrs={'class': 'custom-select'}),
+            'date_of_birth': forms.DateInput(attrs={'class': 'datepicker'}),
+            'weight': forms.NumberInput(attrs={'style': 'width: 100px'}),
+            'height': forms.NumberInput(attrs={'style': 'width: 100px'}),
+            'goals': forms.TextInput(attrs={'class': 'form-control'}),
+            'active': forms.RadioSelect(),
+        }
 
 
 class AddProductForm(forms.ModelForm):

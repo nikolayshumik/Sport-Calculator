@@ -13,6 +13,7 @@ html{
     background-color: $main_backgrounde;
 }
 body{
+  position:relative;
   height: 100%;
   display: flex;
   align-items: center;
@@ -41,6 +42,8 @@ footer{
     padding: 5px;
     max-width: 90%;
     margin: auto;
+    position: absolute;
+    bottom: 0;
     .buttonFooter{
         color: $text_color;
         display: inline-block;
@@ -48,12 +51,14 @@ footer{
         padding: 10px 20px;
         text-decoration: none;
         border-radius: 5px;
-        border: 0;
+        //border: 0;
         background-color: $blue_color;
-        border-left: #0387a0;
+        .imgFooter{
+          width: 8vw;
+        }
     }
     .buttonFooter:hover{
-        border: 2px solid black;
+        box-shadow: 0px 0px 10px -1px #a8fff1;
     }
 
 }

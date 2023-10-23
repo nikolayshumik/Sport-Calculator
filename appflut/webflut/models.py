@@ -5,7 +5,11 @@ from django.utils.crypto import get_random_string
 # Create your models here.
 class Personal_Inform(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)  # Add this line
-    sex = models.TextField()
+    SEX_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+    )
+    sex = models.CharField(max_length=1, choices=SEX_CHOICES, default='M')
     date_of_birth = models.TextField()
     weight = models.TextField()
     height = models.TextField()

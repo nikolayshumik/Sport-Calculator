@@ -1,3 +1,4 @@
+{% extends 'footer.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -15,13 +16,12 @@
     <script defer src="{% static 'js/main.js' %}"></script>
 </head>
 <body>
-    <button class="main-orientations" onclick="goBack()">&lt;</button>
+    {% block content %}
     {% if user.is_authenticated %}
     
         <p>Вы уже вошли в систему как {{ user.username }}</p>
         <a href="{% url 'logout' %}">Выйти</a>
     {% else %}
-        <p>Пожалуйста, выполните вход:</p>
         <form method="post" class="main" action="{% url 'login' %}">
             {% csrf_token %}
          
@@ -35,6 +35,7 @@
             <input type="submit" value="Войти" class="enter" style="margin-top: 50px; margin-bottom: 0px;">
         </form>
     {% endif %}
+    {% endblock %}
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 html {
   height: 100%;
   font-family: "Inter";
-  background-color: #1d1d1d;
+  background-color: #f7f8fa;
 }
 
 body {
@@ -21,9 +21,9 @@ body {
 .data .row-buttons > * {
   width: 60px;
   font-size: 22px;
-  color: white;
+  color: #0c1c2c;
   border: 0px;
-  background-color: rgb(4, 177, 211);
+  background-color: white;
   padding-top: 5px;
   padding-bottom: 5px;
   text-decoration: none;
@@ -33,9 +33,9 @@ body {
 .profile {
   margin-left: auto;
   font-size: 25px;
-  color: white;
+  color: #0c1c2c;
   border: 0px;
-  background-color: rgb(4, 177, 211);
+  background-color: white;
   padding: 5px 10px;
   text-decoration: none;
   border-radius: 10px;
@@ -45,12 +45,12 @@ body {
   font-size: 25px;
   border-radius: 10px;
   margin-top: 20px;
-  background-color: rgb(4, 177, 211);
-  color: white;
+  background-color: white;
+  color: #0c1c2c;
   padding-top: 5px;
 }
 .block .nutrition-div {
-  background-color: rgb(4, 177, 211);
+  background-color: white;
   font-size: 15px;
   border-radius: 5px;
   margin: 5px;
@@ -68,10 +68,10 @@ body {
 
 .eatings {
   border-radius: 10px;
-  background-color: aquamarine;
+  background-color: white;
   width: 90%;
   font-size: 15px;
-  color: white;
+  color: #0c1c2c;
   margin: 10px auto 0 auto;
   border: 0px;
   padding: 5px;

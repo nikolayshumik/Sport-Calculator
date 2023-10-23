@@ -1,12 +1,10 @@
 /* calories_and_bjy*/
 html {
-  height: 100%;
   font-family: "Inter";
   background-color: #1d1d1d;
 }
 
 body {
-  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -34,6 +32,8 @@ footer {
   padding: 5px;
   max-width: 90%;
   margin: auto;
+  position: fixed;
+  bottom: 8vw;
 }
 footer .buttonFooter {
   color: white;
@@ -45,6 +45,9 @@ footer .buttonFooter {
   border: 0;
   background-color: rgb(4, 177, 211);
   border-left: #0387a0;
+}
+footer .buttonFooter .imgFooter {
+  width: 8vw;
 }
 footer .buttonFooter:hover {
   border: 2px solid black;
@@ -63,10 +66,10 @@ footer .buttonFooter:hover {
 }
 
 .main {
+  margin-top: 50%;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  margin: auto;
   background-color: rgb(47, 47, 47);
   padding: 5%;
   text-align: center;

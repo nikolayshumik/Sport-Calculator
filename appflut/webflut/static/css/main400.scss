@@ -8,12 +8,10 @@ $font_main_text: 25px;
 $font_ps_text: 15px;
 
 html{
-   height: 100%;
     font-family: "Inter";
     background-color: $main_backgrounde;
 }
 body{
-  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -39,6 +37,8 @@ footer{
     padding: 5px;
     max-width: 90%;
     margin: auto;
+    position: fixed;
+    bottom: 8vw;
     .buttonFooter{
         color: $text_color;
         display: inline-block;
@@ -49,12 +49,15 @@ footer{
         border: 0;
         background-color: $blue_color;
         border-left: #0387a0;
+        .imgFooter{
+          width: 8vw;
+        }
     }
     .buttonFooter:hover{
         border: 2px solid black;
     }
-
 }
+
   .modal {
     display: none;
     position: fixed;
@@ -67,10 +70,11 @@ footer{
     background-color: rgba(0, 0, 0, 0.4);
   }
   .main{
+    margin-top: 50%;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    //margin: auto;
     background-color: $gray_color;
     padding: 5%;
     text-align: center;
